@@ -34,7 +34,7 @@ for i = 1:numberOfSlitElements
     xlabel("x [um]")
     xlim([min(xVector), max(xVector)])
     sgt = sgtitle("Slit position");
-    sgt.FontSize = 36;
+    sgt.FontSize = 22;
     figure(2)
     spectralFunction = abs(fft(slitPositions));
     spectralFunction = fftshift(spectralFunction);
@@ -46,7 +46,7 @@ for i = 1:numberOfSlitElements
     label = strcat('Slits: ', num2str(numberOfSlits(i)));
     legend(label)
     sgt = sgtitle("Spectral Function");
-    sgt.FontSize = 36;
+    sgt.FontSize = 22;
     
     binVector = linspace(0, freqStep * N, length(slitPositions));
     binVector = binVector - (freqStep * N / 2);
@@ -55,7 +55,7 @@ for i = 1:numberOfSlitElements
     plot(binVector, spectralFunction, linewidth=2, color=colorList(i))
 %     xlim([-1, 1])
     sgt = sgtitle("Spectral Function");
-    sgt.FontSize = 36;
+    sgt.FontSize = 22;
     label = strcat('Slits: ', num2str(numberOfSlits(i)));
     legend(label)
 end

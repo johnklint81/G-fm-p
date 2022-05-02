@@ -1,4 +1,4 @@
-
+clear all
 close all
 numberOfSlits = [1, 3, 10, 30];
 numberOfSlitElements = length(numberOfSlits);
@@ -15,7 +15,8 @@ discretisationFrequency = discreteSlitWidth + discreteSlitDistance;
 
 for i = 1:numberOfSlitElements
     if numberOfSlits(i) == 1
-       slitPositions = ones(discreteSlitWidth, 1); 
+       slitPositions = ones(discreteSlitWidth, 1);
+       intervalLength = length(slitPositions);
     else
     slitPositions = zeros((numberOfSlits(i) - 1) * discretisationFrequency, 1);
     intervalLength = length(slitPositions);
@@ -51,7 +52,7 @@ for i = 1:numberOfSlitElements
     plot(binVector, spectralFunction, linewidth=2, color=colorList(i))
 %     xlim([-1, 1])
     sgt = sgtitle("Spectral Function");
-    sgt.FontSize = 36;
+    sgt.FontSize = 20;
     label = strcat('Slits: ', num2str(numberOfSlits(i)));
     legend(label)
 end
